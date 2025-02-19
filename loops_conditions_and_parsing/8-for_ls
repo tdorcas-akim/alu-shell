@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Displaying the content of the current directory
+for file in */; do
+    filename="${file%/}"
+    part_after_dash="${filename#*-}"
+    echo "$part_after_dash"
+done
