@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$pid" ]; then
+echo "Terminating process $pid"
+    echo -n "1" > /proc/$pid/oom_score_adj
+else
+    echo "Process not found"
+fi
